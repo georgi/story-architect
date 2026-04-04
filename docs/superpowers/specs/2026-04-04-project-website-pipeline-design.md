@@ -53,7 +53,15 @@ The site is a graph traversed through people. From any character page, the user 
 - Other characters (via relationships)
 - Back to the landing page
 
-Audio transitions between pages: landing has the main theme, character pages have their personal theme music, location pages have ambient audio.
+Audio persists across page navigations via Astro View Transitions (available since Astro 3.x). The `AmbientController` component lives in the `BaseLayout` and survives route changes using `transition:persist`. On navigation, audio crossfades between the current track and the target page's audio (main theme → character theme → location ambient).
+
+### Location Pages
+
+Clicking a location tile from a character page opens a location page showing:
+- **Atmosphere image** — full-width hero
+- **Ambient audio** — auto-plays on entry
+- **Inhabitants** — which characters are connected to this location (clickable back to their pages)
+- **Description** — extracted from `world.md` sub-world section
 
 ## Media Manifest
 
@@ -133,8 +141,10 @@ wiki/projects/[PROJECT]/media/
 │   ├── main-theme.mp3
 │   ├── mood-reel.mp4
 │   └── og-image.webp
-└── media-manifest.json
+└── media-manifest.json  ← NOT here, lives at project root (see above)
 ```
+
+Note: `media-manifest.json` lives at `wiki/projects/[PROJECT]/media-manifest.json` (project root level), not inside the `media/` directory. It governs media but is not itself a media asset.
 
 ## New Agents
 
@@ -142,13 +152,21 @@ wiki/projects/[PROJECT]/media/
 
 Added to `.claude/agents/media-director.md`.
 
+**Frontmatter:**
+```yaml
+---
+name: Media Director
+description: Reads project wiki, derives visual/audio prompts, writes media manifest, generates assets via fal MCP
+tools: [fal MCP: search_models, get_model_schema, get_pricing, run_model, submit_job, check_job, upload_file]
+model: sonnet
+---
+```
+
 **Role:** Reads the project wiki, derives visual and audio prompts from narrative content, writes the media manifest, and executes generation via fal MCP.
 
 **Inputs:** All entity files in `wiki/projects/[PROJECT]/`, especially `tone.md` for style direction and character files for descriptive material.
 
 **Outputs:** `media-manifest.json` and generated assets in `media/`.
-
-**Tools:** fal MCP — `search_models` (discover available models), `get_model_schema` (check parameters), `run_model` (synchronous generation), `submit_job` + `check_job` (async for video), `upload_file` (if needed for img2img).
 
 **Behavior:**
 1. Read all wiki entities for the project
@@ -228,7 +246,7 @@ Located at `site/site-config.json`.
 7. `/site-preview` — check locally
 8. `/site-deploy` — push live
 
-Wiki changes trigger a re-run of steps 3-7. Only changed entities get new assets.
+Wiki changes → re-run `/media-plan` (updates manifest for changed entities) then steps 4-7.
 
 ## Astro Site Structure
 
@@ -242,8 +260,10 @@ site/
 │   │   └── BaseLayout.astro        # Dark immersive shell, audio controller
 │   ├── pages/
 │   │   ├── index.astro             # Landing page — title + character grid
-│   │   └── characters/
-│   │       └── [slug].astro        # Character portal — dynamic route
+│   │   ├── characters/
+│   │   │   └── [slug].astro        # Character portal — dynamic route
+│   │   └── locations/
+│   │       └── [slug].astro        # Location page — atmosphere, inhabitants
 │   ├── components/
 │   │   ├── CharacterCard.astro     # Portrait circle on landing
 │   │   ├── AudioPlayer.astro       # Inline audio player (voice, music)
@@ -258,7 +278,7 @@ site/
 │       ├── wiki-loader.ts          # Reads + parses wiki markdown at build time
 │       └── media-resolver.ts       # Resolves entity → media paths
 ├── public/
-│   └── media/ → symlink or copy from wiki/projects/[P]/media/
+│   └── media/                      # Copied from wiki media/ during build
 └── dist/                           # Build output
 ```
 
@@ -268,6 +288,41 @@ site/
 - **fal MCP** — unified API for image (flux-pro), audio (stable-audio, playai/tts), and video (minimax-video) generation
 - **No database** — wiki markdown is the CMS
 - **No framework runtime** — vanilla JS islands only where needed (audio player, video player)
+- **Astro View Transitions** — for persistent audio across page navigations
+
+## wiki-loader.ts Contract
+
+The wiki loader reads markdown files from the project wiki at Astro build time and returns structured data.
+
+**Character files** (`wiki/projects/[P]/characters/[name].md`): Parsed by heading sections. Expected sections: `## Ghost`, `## Lie`, `## Want`, `## Need`, `## Crucible`, `## Fears`, `## Dark Side`, `## Life Lessons`, `## Paradox`, `## Here and Now`. Each section's content is extracted as markdown text. The character's name is derived from the filename (slug).
+
+**Location data** (`wiki/projects/[P]/world.md`): Parsed by `## Sub-Worlds` section, then by `### [Location Name]` subsections. Each location gets a slug derived from its heading.
+
+**Relationships**: Extracted from `wiki/projects/[P]/_ensemble.md` — collision pairs and relationship descriptions parsed from the ensemble table/list.
+
+**Missing/incomplete entities**: The loader handles draft-status files gracefully. If a section heading exists but has no content, the field is `null`. If an entire file is missing, the entity is excluded from the build (no build failure). The site displays only what exists.
+
+**Frontmatter**: Character and entity files may optionally include YAML frontmatter with metadata (e.g., `quote`, `facet`, `enneagram_type`). If present, it's merged into the entity data.
+
+## media-resolver.ts Contract
+
+Reads `media-manifest.json` and provides a lookup function: `resolve(entity: string, type: string) → string | null`.
+
+- Maps entity + asset type to the output path from the manifest
+- Returns `null` for missing assets, failed generation, or skipped items
+- The site builder uses this to conditionally render media components (no portrait → no portrait section, no mood reel → no video player)
+
+## Incremental Generation
+
+Incremental means **manifest-status-driven only**. The system does not automatically detect wiki content changes.
+
+- Re-running `/media-generate` processes only `pending` and `failed` items
+- If wiki content changes (e.g., a character description is reworked), the user re-runs `/media-plan` which produces a new manifest. The media-director compares against existing assets and marks changed entities as `pending` while preserving `done`/`override` status for unchanged entities.
+- Manual override: set any item's status back to `pending` to force regeneration
+
+## Deployment
+
+`/site-deploy` is out of scope for the initial implementation. The build outputs to `dist/` which can be manually deployed to any static hosting provider (Vercel, Netlify, Cloudflare Pages, S3, rsync). A future iteration may add deploy target configuration.
 
 ## Integration with Existing System
 
