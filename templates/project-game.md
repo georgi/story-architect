@@ -27,6 +27,11 @@ Standard wiki structure for an interactive narrative game project. Copy this str
 │   ├── choices.md         # Choice design document
 │   └── validation.md      # Structure validation against quality gates
 ├── pitch.md               # Logline, synopsis, character pages, USP
+├── media-manifest.json    # Asset generation plan (fal AI prompts + status)
+├── media/                 # Generated multimedia assets
+│   ├── characters/        # Portraits, voice samples, theme music, mood reels
+│   ├── locations/         # Atmosphere images, ambient audio
+│   └── atmosphere/        # Project-level assets (main theme, OG image)
 └── log/                   # Work log, evaluation reports
 ```
 
@@ -66,6 +71,8 @@ Standard wiki structure for an interactive narrative game project. Copy this str
 | Tone | | | |
 | Narrative | | | |
 | Pitch | | | |
+| Media | | | |
+| Website | | | |
 ```
 
 ### _state.md

@@ -26,6 +26,11 @@ Standard wiki structure for a television series project. Copy this structure whe
 │   ├── plot.md            # Episode-by-episode plot structure
 │   └── validation.md      # Structure validation against quality gates
 ├── pitch.md               # Logline, synopsis, character pages, USP
+├── media-manifest.json    # Asset generation plan (fal AI prompts + status)
+├── media/                 # Generated multimedia assets
+│   ├── characters/        # Portraits, voice samples, theme music, mood reels
+│   ├── locations/         # Atmosphere images, ambient audio
+│   └── atmosphere/        # Project-level assets (main theme, OG image)
 └── log/                   # Work log, evaluation reports
 ```
 
@@ -64,6 +69,8 @@ Standard wiki structure for a television series project. Copy this structure whe
 | Format | | | |
 | Season | | | |
 | Pitch | | | |
+| Media | | | |
+| Website | | | |
 ```
 
 ### _state.md

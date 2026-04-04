@@ -24,6 +24,11 @@ Standard wiki structure for a feature film project. Copy this structure when cre
 │   ├── arc.md             # Protagonist arc across the film
 │   └── validation.md      # Structure validation against quality gates
 ├── pitch.md               # Logline, synopsis, character pages, USP
+├── media-manifest.json    # Asset generation plan (fal AI prompts + status)
+├── media/                 # Generated multimedia assets
+│   ├── characters/        # Portraits, voice samples, theme music, mood reels
+│   ├── locations/         # Atmosphere images, ambient audio
+│   └── atmosphere/        # Project-level assets (main theme, OG image)
 └── log/                   # Work log, evaluation reports
 ```
 
@@ -62,6 +67,8 @@ Standard wiki structure for a feature film project. Copy this structure when cre
 | Tone | | | |
 | Structure | | | |
 | Pitch | | | |
+| Media | | | |
+| Website | | | |
 ```
 
 ### _state.md
