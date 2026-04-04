@@ -6,7 +6,7 @@ sources:
   - "Truby, John: The Anatomy of Story (Kap. 3–5: Character Web, Four-Corner Opposition)"
   - "Hutzler, Laurie: The Emotional Toolbox (Enneagram-Typ-Interaktionen)"
   - "Figuren-Synthese Prozessdatei (05-figuren-synthese.md)"
-  - "Figuren-Regeln (shared/figuren-regeln.md)"
+  - "Character Rules (shared/character-rules.md)"
 related:
   - "character-psychology.md"
   - "enneagram-types.md"

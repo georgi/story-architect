@@ -4,7 +4,7 @@ sources:
   - Bibliothek/markdown/Hutzler - How to Evaluate Stories.md
   - shared/eval-framework.md
   - shared/quality-gates.md
-  - shared/figuren-regeln.md
+  - shared/character-rules.md
 related:
   - wiki/dramaturgy/character.md
   - wiki/dramaturgy/theme.md
