@@ -63,6 +63,29 @@ See templates:
 |---|---|---|
 | author-voice.md | template | Author's compiled voice profile — rhythm, vocabulary, imagery, worldview |
 
+## Media & Website
+
+Projects can generate immersive websites with AI-created multimedia assets.
+
+| Component | Location | Purpose |
+|---|---|---|
+| media-manifest.json | `projects/[P]/media-manifest.json` | Asset generation plan — models, prompts, status per asset |
+| media/ | `projects/[P]/media/` | Generated images, audio, video |
+| site/ | Repository root `site/` | Astro static site generator |
+| site-config.json | `site/site-config.json` | Theme, visibility mode, project binding |
+
+**Pipeline:** Wiki entities → `media-director` agent → media-manifest.json → fal AI generation → media/ directory → Astro build → deployable static site
+
+**Asset types:**
+
+| Entity | Assets |
+|---|---|
+| Character | Portrait, voice sample, theme music, mood reel |
+| Location | Atmosphere image, ambient audio |
+| Project | Main theme, mood reel, OG image |
+
+See: `process/09-media.md`, `process/10-site.md`
+
 ---
 
 ## Shared Framework (`shared/`)
