@@ -1,0 +1,112 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  audioSrc?: string;
+}
+
+const { title, description = '', ogImage, audioSrc } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <ViewTransitions />
+  </head>
+  <body>
+    <slot />
+    <!-- Always render ambient controller so transition:persist works across all pages -->
+    <div id="ambient-controller" transition:persist>
+      <audio id="ambient-audio" loop preload="auto"></audio>
+      <button id="ambient-toggle" style="position: fixed; bottom: 1rem; right: 1rem; background: none; border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 0.3rem 0.6rem; color: #4a4840; cursor: pointer; font-size: 0.7rem; z-index: 100;">
+        &#x1f50a; ambient
+      </button>
+    </div>
+    <!--
+      Each page communicates its desired audio via a hidden element.
+      The crossfade script reads this on every navigation.
+    -->
+    {audioSrc && <div id="page-audio-src" data-src={audioSrc} hidden></div>}
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        const audio = document.getElementById('ambient-audio') as HTMLAudioElement | null;
+        const toggle = document.getElementById('ambient-toggle');
+        const pageAudio = document.getElementById('page-audio-src');
+        if (!audio) return;
+
+        const newSrc = pageAudio?.dataset.src || null;
+        const currentSrc = audio.getAttribute('src');
+
+        // Toggle button
+        if (toggle && !toggle.dataset.bound) {
+          toggle.dataset.bound = 'true';
+          toggle.addEventListener('click', () => {
+            if (audio.paused) {
+              audio.play().catch(() => {});
+              toggle.innerHTML = '&#x1f50a; ambient';
+            } else {
+              audio.pause();
+              toggle.innerHTML = '&#x1f507; muted';
+            }
+          });
+        }
+
+        if (!newSrc) {
+          // No audio for this page — fade out
+          if (!audio.paused) {
+            const fadeOut = setInterval(() => {
+              if (audio.volume > 0.05) {
+                audio.volume -= 0.05;
+              } else {
+                audio.pause();
+                audio.volume = 1;
+                clearInterval(fadeOut);
+              }
+            }, 50);
+          }
+          return;
+        }
+
+        if (currentSrc === newSrc) return; // Same track, keep playing
+
+        // Crossfade to new track
+        const doSwap = () => {
+          audio.src = newSrc;
+          audio.volume = 0;
+          audio.play().then(() => {
+            const fadeIn = setInterval(() => {
+              if (audio.volume < 0.95) {
+                audio.volume += 0.05;
+              } else {
+                audio.volume = 1;
+                clearInterval(fadeIn);
+              }
+            }, 50);
+          }).catch(() => {});
+        };
+
+        if (!audio.paused) {
+          const fadeOut = setInterval(() => {
+            if (audio.volume > 0.05) {
+              audio.volume -= 0.05;
+            } else {
+              clearInterval(fadeOut);
+              doSwap();
+            }
+          }, 50);
+        } else {
+          doSwap();
+        }
+      });
+    </script>
+  </body>
+</html>
