@@ -1,17 +1,39 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CharacterCard from '../components/CharacterCard.astro';
+import { loadCharacters } from '../lib/wiki-loader';
+import { createMediaResolver } from '../lib/media-resolver';
+import siteConfig from '../../site-config.json';
+import path from 'node:path';
 
+const wikiPath = path.resolve(process.cwd(), siteConfig.wiki_path);
+const characters = await loadCharacters(wikiPath);
+const resolve = await createMediaResolver(wikiPath);
+
+const mainTheme = resolve('atmosphere', 'main_theme');
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title={siteConfig.title}
+  description={siteConfig.logline}
+  audioSrc={mainTheme ? `/media/${mainTheme}` : undefined}
+>
+  <div class="landing">
+    <p class="subtitle">A Story Architect Project</p>
+    <h1 class="title">{siteConfig.title}</h1>
+    <p class="logline">{siteConfig.logline}</p>
+
+    <div class="character-grid">
+      {characters.map(char => {
+        const portrait = resolve(`characters/${char.slug}`, 'portrait');
+        return (
+          <CharacterCard
+            slug={char.slug}
+            name={char.name}
+            portraitSrc={portrait ? `/media/${portrait}` : null}
+          />
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

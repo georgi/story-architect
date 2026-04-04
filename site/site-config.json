@@ -1,0 +1,10 @@
+{
+  "project": "demo",
+  "wiki_path": "../wiki/projects/demo",
+  "mode": "private",
+  "title": "Harbor District",
+  "logline": "A Baltic noir where the harbor's tide schedule is the most honest clock in a city of liars.",
+  "theme": { "palette": "baltic-noir", "font": "system" },
+  "audio": { "autoplay": false, "ambient": true },
+  "visibility": { "dark_side": true, "ghost_lie": true, "relationships": true, "mood_reels": true }
+}
