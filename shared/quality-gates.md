@@ -25,6 +25,8 @@ The derivation chain is a one-way street. Errors propagate forward. Fixes propag
 | Format | Gate 5 | Tone at draft+ |
 | Structure | Gate 6 | All above at draft+ |
 | Pitch & Export | Gate 7 | All above at reviewed+ |
+| Media Generation | Gate 8 | Tone at draft+, Characters at draft+ |
+| Site Build | — | Media at generated (or placeholder) |
 
 ---
 
@@ -305,3 +307,20 @@ These apply to ALL deliverables. If any fails, the output is rejected regardless
 | 7.6 | Unique selling point articulated (why THIS story, why NOW) | |
 | 7.7 | All Universal Gates pass on the final document | |
 | 7.8 | Critic review completed with no critical findings outstanding | |
+
+---
+
+## Gate 8: Media Manifest
+
+| # | Check | YES/NO |
+|---|---|---|
+| 8.1 | tone_directive is specific (not "dark and moody" but sensory-concrete) | |
+| 8.2 | style_seed enforces visual coherence (consistent palette, lens, grain) | |
+| 8.3 | Every character with Here and Now section has a portrait entry | |
+| 8.4 | Every sub-world in world.md has an atmosphere image entry | |
+| 8.5 | Portrait prompts include physical details FROM the wiki (not invented) | |
+| 8.6 | Voice prompts use dialogue IN CHARACTER (not generic sentences) | |
+| 8.7 | Audio prompts specify instrument, tempo, texture (not just mood) | |
+| 8.8 | No AI prompt clichés (no "epic", "stunning", "beautiful", "masterful") | |
+| 8.9 | style_seed is appended to every image prompt (not overridden) | |
+| 8.10 | All output paths follow the standard media directory structure | |
