@@ -127,6 +127,8 @@ The critic reads the entire project wiki and updates `_state.md` with: findings 
 | Review | `dramaturg`, `evaluator` | Single text: dramatic substance, mechanical eval |
 | Analysis | `synthesis-engine` | Pattern matching against prestige narratives |
 | Meta | `optimizer` | Prompt mutation after eval |
+| Media | `media-director` | Asset planning + generation via fal MCP |
+| Website | `site-builder` | Astro site generation + build |
 
 ### Characters: Flexible, Not a Chain
 
@@ -165,6 +167,13 @@ Define 5-7 life realities from the impulse (protagonists + victims + gray zones)
 - `/review [Entity]` — Spawn dramaturg, check dramatic substance
 - `/revise [Entity]` — Targeted rework of an entity with feedback
 - `/export` — Generate final concept from wiki
+- `/site-init` — Scaffold Astro project in `site/`, create site-config.json
+- `/media-plan` — Spawn media-director → write media-manifest.json for review
+- `/media-generate` — Generate all pending assets via fal MCP
+- `/media-generate [entity]` — Generate assets for a single entity
+- `/site-build` — Build static site from wiki + media
+- `/site-preview` — Local dev server preview
+- `/site-deploy` — Deploy dist/ to static hosting (out of scope for initial implementation)
 
 ## Creative Directives
 
