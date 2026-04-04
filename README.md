@@ -119,7 +119,7 @@ story-architect/
 
 ## Knowledge Base Status
 
-The `wiki/dramaturgy/` articles are planned but not yet populated. Each article needs to be compiled from source craft books. See `wiki/dramaturgy/_index.md` for the full list with source references.
+The `wiki/dramaturgy/` knowledge base contains 8 compiled articles (~3,500 lines) from 35+ craft books covering character psychology, Enneagram types, story structure, world-building, scene craft, dialogue, evaluation, and ensemble design. TV-specific articles (serialization, industry) live in `wiki/tv/`. Film and game articles are planned. See `wiki/_index.md` for the full inventory.
 
 ## Website Pipeline
 

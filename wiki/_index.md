@@ -10,25 +10,25 @@ Compiled dramaturgical expertise from 35+ craft books. These articles are the sh
 
 See: [dramaturgy/_index.md](dramaturgy/_index.md)
 
-| Article | Status | Content |
-|---|---|---|
-| character-psychology.md | planned | 11 dramatic units, Emotional Toolbox, Nutshell Technique |
-| enneagram-types.md | planned | 9 types with Ghost/Lie/Dark Side, Values Matrix, value redirect |
-| story-structure.md | planned | McKee, Truby, Field, Calvisi, Miller compared |
-| world-building.md | planned | Story World, sub-worlds, mise-en-scene |
-| scene-craft.md | planned | 8-sequence structure, beat types, status dynamics |
-| dialogue-voice.md | planned | Telecinematic discourse, speech profiles, linguistic fingerprinting |
-| evaluation.md | planned | Quality gates, anti-sanitization, linting checklists |
-| ensemble-design.md | planned | Theme embodiment, opponent network, collision pairs, POV management |
+| Article | Lines | Content | Sources |
+|---|---|---|---|
+| character-psychology.md | 399 | 11 dramatic units, Emotional Toolbox, Nutshell Technique | Hutzler, Marks, Puglisi, Chamberlain |
+| enneagram-types.md | 728 | 9 types with Ghost/Lie/Dark Side, Values Matrix, 27 real values | Hutzler ETB 1-9 |
+| story-structure.md | 323 | McKee (value charges), Truby (22 Steps), Field, Calvisi, Miller — comparison + synthesis | McKee, Truby, Field, Calvisi, Miller |
+| world-building.md | 329 | Story World, sub-worlds method, mise-en-scene, symbol web | Truby, Bordwell, Butler |
+| scene-craft.md | 364 | 8-sequence structure, beat types, status dynamics, subtext | Gulino, Schütte |
+| dialogue-voice.md | 346 | Telecinematic discourse, speech profiles, subtext, linguistic fingerprinting | Bednarek |
+| evaluation.md | 652 | Hutzler's 7 questions, quality gates, anti-sanitization, diagnostics | Hutzler, eval-framework |
+| ensemble-design.md | 337 | Theme embodiment, opponent network, collision pairs, POV management | Mittell, Douglas, Truby |
 
 ## TV (`tv/`)
 
 Television-specific knowledge. See: [tv/_index.md](tv/_index.md)
 
-| Article | Status | Content |
-|---|---|---|
-| serialization.md | planned | Serialization degrees, A/B/C plot hierarchy, season arc types |
-| industry.md | planned | Market knowledge, pitch culture, co-production |
+| Article | Lines | Content | Sources |
+|---|---|---|---|
+| serialization.md | 343 | Serialization degrees, narrative complexity, A/B/C plots, season arc types, binge structure | Mittell, Douglas, Redvall, Jenner |
+| industry.md | 294 | German market, international models, co-production, streaming disruption, pitch culture | Krauss, Nelson, SAGE, Esquenazi |
 
 ## Film (`film/`)
 
@@ -61,7 +61,7 @@ See templates:
 
 | File | Status | Content |
 |---|---|---|
-| author-voice.md | template | Author's compiled voice profile — rhythm, vocabulary, imagery, worldview |
+| author-voice.md | 349 | Compiled author voice — rhythm, vocabulary, imagery, worldview, anti-patterns, 10 application rules, 20 citation examples |
 
 ## Media & Website
 
