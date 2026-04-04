@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -20,7 +20,7 @@ const { title, description = '', ogImage, audioSrc } = Astro.props;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     {ogImage && <meta property="og:image" content={ogImage} />}
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <slot />
