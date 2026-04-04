@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
+import CharacterCard from '../../components/CharacterCard.astro';
+import { loadCharacters, loadLocations } from '../../lib/wiki-loader';
+import { createMediaResolver } from '../../lib/media-resolver';
+import { marked } from 'marked';
+import siteConfig from '../../../site-config.json';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  const wikiPath = path.resolve(process.cwd(), siteConfig.wiki_path);
+  const locations = await loadLocations(wikiPath);
+  return locations.map(loc => ({ params: { slug: loc.slug }, props: { location: loc } }));
+}
+
+const { location } = Astro.props;
+const wikiPath = path.resolve(process.cwd(), siteConfig.wiki_path);
+const resolve = await createMediaResolver(wikiPath);
+const allCharacters = await loadCharacters(wikiPath);
+
+const atmosphereSrc = resolve(`locations/${location.slug}`, 'atmosphere');
+const ambientSrc = resolve(`locations/${location.slug}`, 'ambient');
+
+// Find characters who inhabit this location
+const inhabitants = allCharacters.filter(char =>
+  location.characters?.toLowerCase().includes(char.name.split(' ')[0].toLowerCase())
+);
+---
+
+<BaseLayout
+  title={`${location.name} — ${siteConfig.title}`}
+  audioSrc={ambientSrc ? `/media/${ambientSrc}` : undefined}
+>
+  <div class="page">
+    <a href="/" class="back-link">&larr; Back</a>
+
+    {atmosphereSrc && (
+      <img src={`/media/${atmosphereSrc}`} alt={location.name} class="location-hero" />
+    )}
+
+    <h1>{location.name}</h1>
+    {location.location && <p style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.85rem;">{location.location}</p>}
+
+    {ambientSrc && (
+      <div class="page-section">
+        <h2>Ambient</h2>
+        <AudioPlayer src={`/media/${ambientSrc}`} label="Location ambience" />
+      </div>
+    )}
+
+    {location.atmosphere && (
+      <div class="page-section">
+        <h2>Atmosphere</h2>
+        <p>{location.atmosphere}</p>
+      </div>
+    )}
+
+    {location.rules && (
+      <div class="page-section">
+        <h2>Rules</h2>
+        <p>{location.rules}</p>
+      </div>
+    )}
+
+    {location.themeExpression && (
+      <div class="page-section">
+        <h2>Theme Expression</h2>
+        <p>{location.themeExpression}</p>
+      </div>
+    )}
+
+    {inhabitants.length > 0 && (
+      <div class="page-section">
+        <h2>Inhabitants</h2>
+        <div class="character-grid" style="justify-content: flex-start;">
+          {inhabitants.map(char => {
+            const portrait = resolve(`characters/${char.slug}`, 'portrait');
+            return <CharacterCard slug={char.slug} name={char.name} portraitSrc={portrait ? `/media/${portrait}` : null} />;
+          })}
+        </div>
+      </div>
+    )}
+  </div>
+</BaseLayout>
