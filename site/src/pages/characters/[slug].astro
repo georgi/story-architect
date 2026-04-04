@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AudioPlayer from '../../components/AudioPlayer.astro';
+import VideoPlayer from '../../components/VideoPlayer.astro';
+import LocationTile from '../../components/LocationTile.astro';
+import RelationshipMap from '../../components/RelationshipMap.astro';
+import DarkSideLadder from '../../components/DarkSideLadder.astro';
+import { loadCharacters, loadLocations, loadRelationships, parseDarkSideStages } from '../../lib/wiki-loader';
+import { createMediaResolver } from '../../lib/media-resolver';
+import { marked } from 'marked';
+import siteConfig from '../../../site-config.json';
+import path from 'node:path';
+
+export async function getStaticPaths() {
+  const wikiPath = path.resolve(process.cwd(), siteConfig.wiki_path);
+  const characters = await loadCharacters(wikiPath);
+  return characters.map(char => ({ params: { slug: char.slug }, props: { character: char } }));
+}
+
+const { character } = Astro.props;
+const wikiPath = path.resolve(process.cwd(), siteConfig.wiki_path);
+const resolve = await createMediaResolver(wikiPath);
+const locations = await loadLocations(wikiPath);
+const { collisionPairs, relationships } = await loadRelationships(wikiPath);
+const allCharacters = await loadCharacters(wikiPath);
+
+const portrait = resolve(`characters/${character.slug}`, 'portrait');
+const voiceSrc = resolve(`characters/${character.slug}`, 'voice');
+const themeMusicSrc = resolve(`characters/${character.slug}`, 'theme_music');
+const moodReelSrc = resolve(`characters/${character.slug}`, 'mood_reel');
+
+const darkSideStages = parseDarkSideStages(character.sections.darkSide);
+
+// Find locations this character inhabits
+const characterLocations = locations.filter(loc =>
+  loc.characters?.toLowerCase().includes(character.name.split(' ')[0].toLowerCase())
+);
+
+// Filter relationships for this character
+const relevantCollisions = collisionPairs.filter(cp =>
+  cp.characterA.toLowerCase().includes(character.slug) ||
+  cp.characterB.toLowerCase().includes(character.slug)
+);
+const relevantRelationships = relationships.filter(r =>
+  r.characterA.toLowerCase().includes(character.slug) ||
+  r.characterB.toLowerCase().includes(character.slug)
+);
+
+const characterSlugs = new Map(allCharacters.map(c => [c.name, c.slug]));
+const isPublic = siteConfig.mode === 'public';
+const vis = siteConfig.visibility;
+---
+
+<BaseLayout
+  title={`${character.name} — ${siteConfig.title}`}
+  audioSrc={themeMusicSrc ? `/media/${themeMusicSrc}` : undefined}
+>
+  <div class="page">
+    <a href="/" class="back-link">&larr; Back</a>
+
+    <!-- Hero -->
+    <div class="character-hero">
+      {portrait && <img src={`/media/${portrait}`} alt={character.name} />}
+      <div class="meta">
+        <h1>{character.name}</h1>
+        {character.quote && <p class="quote">"{character.quote}"</p>}
+        <div class="want-need">
+          {character.sections.want && <p><strong>Want:</strong> {character.sections.want}</p>}
+          {character.sections.need && <p><strong>Need:</strong> {character.sections.need}</p>}
+        </div>
+      </div>
+    </div>
+
+    <!-- Voice -->
+    {voiceSrc && (
+      <div class="page-section">
+        <h2>Voice</h2>
+        <AudioPlayer src={`/media/${voiceSrc}`} label="Voice sample" />
+      </div>
+    )}
+
+    <!-- Theme Music -->
+    {themeMusicSrc && (
+      <div class="page-section">
+        <h2>Theme</h2>
+        <AudioPlayer src={`/media/${themeMusicSrc}`} label="Character theme" />
+      </div>
+    )}
+
+    <!-- Their World -->
+    {characterLocations.length > 0 && (
+      <div class="page-section">
+        <h2>Their World</h2>
+        <div class="location-grid">
+          {characterLocations.map(loc => {
+            const atmo = resolve(`locations/${loc.slug}`, 'atmosphere');
+            return <LocationTile slug={loc.slug} name={loc.name} atmosphereSrc={atmo ? `/media/${atmo}` : null} />;
+          })}
+        </div>
+      </div>
+    )}
+
+    <!-- Relationships -->
+    {(!isPublic || vis.relationships) && (relevantCollisions.length > 0 || relevantRelationships.length > 0) && (
+      <div class="page-section">
+        <h2>Relationships</h2>
+        <RelationshipMap
+          characterSlug={character.slug}
+          collisionPairs={relevantCollisions}
+          relationships={relevantRelationships}
+          characterSlugs={characterSlugs}
+        />
+      </div>
+    )}
+
+    <!-- Dark Side -->
+    {(!isPublic || vis.dark_side) && darkSideStages.length > 0 && (
+      <div class="page-section">
+        <h2>Dark Side</h2>
+        <DarkSideLadder stages={darkSideStages} />
+      </div>
+    )}
+
+    <!-- Ghost & Lie (private only) -->
+    {(!isPublic || vis.ghost_lie) && (character.sections.ghost || character.sections.lie) && (
+      <div class="page-section">
+        {character.sections.ghost && (
+          <>
+            <h2>Ghost</h2>
+            <p set:html={marked.parse(character.sections.ghost)} />
+          </>
+        )}
+        {character.sections.lie && (
+          <>
+            <h2 style="margin-top: 1.5rem;">Lie</h2>
+            <p set:html={marked.parse(character.sections.lie)} />
+          </>
+        )}
+      </div>
+    )}
+
+    <!-- Mood Reel -->
+    {(!isPublic || vis.mood_reels) && moodReelSrc && (
+      <div class="page-section">
+        <h2>Mood Reel</h2>
+        <VideoPlayer src={`/media/${moodReelSrc}`} />
+      </div>
+    )}
+  </div>
+</BaseLayout>
