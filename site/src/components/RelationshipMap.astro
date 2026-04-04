@@ -1,0 +1,50 @@
+---
+import type { CollisionPair, Relationship } from '../lib/types';
+
+interface Props {
+  characterSlug: string;
+  collisionPairs: CollisionPair[];
+  relationships: Relationship[];
+  characterSlugs: Map<string, string>; // name → slug
+}
+const { characterSlug, collisionPairs, relationships, characterSlugs } = Astro.props;
+
+function slugForName(name: string): string | undefined {
+  for (const [n, s] of characterSlugs) {
+    if (name.toLowerCase().includes(n.toLowerCase()) || n.toLowerCase().includes(name.toLowerCase())) return s;
+  }
+  return undefined;
+}
+---
+
+<div class="relationship-list">
+  {collisionPairs.map(cp => {
+    const otherName = cp.characterA.toLowerCase().includes(characterSlug) ? cp.characterB : cp.characterA;
+    const otherSlug = slugForName(otherName);
+    return (
+      <div class="relationship-item">
+        <span class="collision">&#9889;</span>
+        {otherSlug ? (
+          <a href={`/characters/${otherSlug}`}>{otherName}</a>
+        ) : (
+          <span>{otherName}</span>
+        )}
+        <span style="color: var(--text-muted); font-size: 0.8rem;">— {cp.collisionType}</span>
+      </div>
+    );
+  })}
+  {relationships.map(rel => {
+    const otherName = rel.characterA.toLowerCase().includes(characterSlug) ? rel.characterB : rel.characterA;
+    const otherSlug = slugForName(otherName);
+    return (
+      <div class="relationship-item">
+        {otherSlug ? (
+          <a href={`/characters/${otherSlug}`}>{otherName}</a>
+        ) : (
+          <span>{otherName}</span>
+        )}
+        <span style="color: var(--text-muted); font-size: 0.8rem;">— {rel.dynamic}</span>
+      </div>
+    );
+  })}
+</div>

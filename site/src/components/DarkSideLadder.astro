@@ -1,0 +1,20 @@
+---
+import type { DarkSideStage } from '../lib/types';
+
+interface Props {
+  stages: DarkSideStage[];
+}
+const { stages } = Astro.props;
+---
+
+<div class="dark-side-ladder">
+  {stages.map(stage => (
+    <div class="dark-side-stage">
+      <span class="stage-number">{stage.stage}</span>
+      <div>
+        <div class="stage-title">{stage.title}</div>
+        <div class="stage-desc">{stage.description}</div>
+      </div>
+    </div>
+  ))}
+</div>

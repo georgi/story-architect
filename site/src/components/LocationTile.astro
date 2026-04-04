@@ -1,0 +1,19 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  atmosphereSrc: string | null;
+}
+const { slug, name, atmosphereSrc } = Astro.props;
+---
+
+<a href={`/locations/${slug}`} class="location-tile">
+  {atmosphereSrc ? (
+    <img src={atmosphereSrc} alt={name} />
+  ) : (
+    <div style="width: 100%; height: 100%; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+      {name}
+    </div>
+  )}
+  <div class="overlay">{name}</div>
+</a>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  src: string;
+  label?: string;
+}
+const { src, label } = Astro.props;
+const id = `audio-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<div class="media-player" data-audio-player={id}>
+  <button class="play-button" aria-label="Play" data-play-btn={id}>
+    <svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor">
+      <path d="M0 0v14l12-7z" />
+    </svg>
+  </button>
+  {label && <span style="font-size: 0.8rem; color: var(--text-secondary);">{label}</span>}
+  <div class="progress-bar"><div class="fill" data-progress={id}></div></div>
+  <span class="time-display" data-time={id}>0:00</span>
+  <audio data-audio={id} preload="metadata">
+    <source src={src} />
+  </audio>
+</div>
+
+<script define:vars={{ id }}>
+  const audio = document.querySelector(`[data-audio="${id}"]`);
+  const btn = document.querySelector(`[data-play-btn="${id}"]`);
+  const progress = document.querySelector(`[data-progress="${id}"]`);
+  const time = document.querySelector(`[data-time="${id}"]`);
+
+  if (audio && btn) {
+    btn.addEventListener('click', () => {
+      if (audio.paused) { audio.play(); } else { audio.pause(); }
+    });
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        progress.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+        const s = Math.floor(audio.currentTime);
+        time.textContent = `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
+      }
+    });
+  }
+</script>

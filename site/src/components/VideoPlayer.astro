@@ -1,0 +1,17 @@
+---
+interface Props {
+  src: string;
+}
+const { src } = Astro.props;
+---
+
+<div style="border-radius: 8px; overflow: hidden; background: var(--bg-elevated);">
+  <video
+    controls
+    preload="metadata"
+    style="width: 100%; display: block;"
+    playsinline
+  >
+    <source src={src} />
+  </video>
+</div>
