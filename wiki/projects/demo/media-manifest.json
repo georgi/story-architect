@@ -1,0 +1,52 @@
+{
+  "project": "demo",
+  "tone_directive": "Security camera watching something it shouldn't. Baltic winter light, industrial geometry, sodium orange nights.",
+  "style_seed": "cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
+  "assets": [
+    {
+      "entity": "characters/elena",
+      "type": "portrait",
+      "model": "fal-ai/flux-pro/v1.1",
+      "prompt": "Portrait of a woman, 42, short dark hair graying at temples, sharp features, dark coat collar up, standing on an industrial crane platform, Baltic harbor behind her, sodium lights, fog, desaturated blue-gray palette, cinematic grain, 35mm",
+      "negative_prompt": "cartoon, illustration, glamorous, soft focus, bright colors, smiling",
+      "output": "media/characters/elena/portrait.webp",
+      "status": "done"
+    },
+    {
+      "entity": "characters/marco",
+      "type": "portrait",
+      "model": "fal-ai/flux-pro/v1.1",
+      "prompt": "Portrait of a man, 38, tall, wearing a pressed suit that doesn't belong in a harbor town, standing in a brutalist customs office corridor, fluorescent light, holding a coffee cup, wedding ring visible, tired eyes, desaturated palette, 35mm",
+      "negative_prompt": "cartoon, illustration, action pose, bright colors, smiling",
+      "output": "media/characters/marco/portrait.webp",
+      "status": "done"
+    },
+    {
+      "entity": "locations/the-terminal",
+      "type": "atmosphere",
+      "model": "fal-ai/flux-pro/v1.1",
+      "prompt": "Container terminal at dusk, massive cranes silhouetted against white Baltic sky, wet concrete, sodium floodlights cutting through fog, a single figure walking between container stacks, industrial scale, cinematic wide shot, desaturated blue-gray palette, 35mm",
+      "negative_prompt": "cartoon, illustration, bright colors, daytime, sunny",
+      "output": "media/locations/the-terminal/atmosphere.webp",
+      "status": "done"
+    },
+    {
+      "entity": "locations/the-customs-office",
+      "type": "atmosphere",
+      "model": "fal-ai/flux-pro/v1.1",
+      "prompt": "Brutalist government building interior, long corridor with fluorescent strip lights, concrete walls, glass partition offices, stacked paper files visible through windows, one figure at end of corridor, clinical sterile atmosphere, desaturated, 35mm",
+      "negative_prompt": "cartoon, cozy, warm lighting, modern design",
+      "output": "media/locations/the-customs-office/atmosphere.webp",
+      "status": "done"
+    },
+    {
+      "entity": "locations/the-fishermans-quarter",
+      "type": "atmosphere",
+      "model": "fal-ai/flux-pro/v1.1",
+      "prompt": "Narrow cobblestone street at night, old low buildings, a corner bar with warm light spilling onto wet pavement, sea wind visible in a swinging sign, two figures smoking outside, harbor cranes visible above rooftops in background, sodium and neon light mix, 35mm",
+      "negative_prompt": "cartoon, daytime, modern architecture, clean streets",
+      "output": "media/locations/the-fishermans-quarter/atmosphere.webp",
+      "status": "done"
+    }
+  ]
+}
