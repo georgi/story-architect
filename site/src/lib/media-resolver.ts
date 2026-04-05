@@ -33,7 +33,8 @@ export async function createMediaResolver(wikiPath: string): Promise<ResolveFunc
   const lookup = new Map<string, string>();
   for (const asset of manifest.assets) {
     if (asset.status === 'done' || asset.status === 'override') {
-      lookup.set(`${asset.entity}:${asset.type}`, asset.output as string);
+      const output = (asset.output as string).replace(/^media\//, '');
+      lookup.set(`${asset.entity}:${asset.type}`, output);
     }
   }
 

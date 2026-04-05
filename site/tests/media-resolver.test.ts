@@ -8,7 +8,7 @@ describe('createMediaResolver', () => {
   it('resolves existing done assets', async () => {
     const resolve = await createMediaResolver(DEMO_WIKI);
     const result = resolve('characters/elena', 'portrait');
-    expect(result).toBe('media/characters/elena/portrait.webp');
+    expect(result).toBe('characters/elena/portrait.webp');
   });
 
   it('returns null for pending assets', async () => {
@@ -36,6 +36,6 @@ describe('createMediaResolver', () => {
     const resolve = await createMediaResolver(DEMO_WIKI);
     // All done assets should resolve
     const result = resolve('locations/the-terminal', 'atmosphere');
-    expect(result).toBe('media/locations/the-terminal/atmosphere.webp');
+    expect(result).toBe('locations/the-terminal/atmosphere.webp');
   });
 });
