@@ -1,55 +1,55 @@
-# World — Harbor District
+# World — The Iron Pass
 
 ## Overworld
-**Location:** Rostock, Germany — the commercial harbor and its surrounding neighborhoods
-**Time:** Present day, winter
-**Conditions:** Post-reunification economic stagnation meets new money from Baltic trade routes. EU customs regulations create a gray zone between legal and illegal cargo.
-**Pressure Cooker:** Everyone depends on the harbor for their livelihood. Leave the harbor, leave your income, your identity, your family's history.
+**Location:** The Iron Pass — a mountain fortress controlling the only route between the Northern Reaches and the Southern Kingdoms
+**Time:** Late autumn, snow coming early
+**Conditions:** The North has been semi-autonomous for a generation. The Crown's authority thins with altitude. Iron and obsidian from the mines make the Pass strategically vital — whoever holds it arms the kingdom or starves it.
+**Pressure Cooker:** Everyone depends on the Pass for survival. The mines provide work. The tolls provide food. The trade route provides everything else. Close the pass, and the fortress eats itself within a month.
 
 ## Sub-Worlds
 
-### The Terminal
-**Location:** Container terminal 7 — the largest and oldest section of the port
-**Atmosphere:** Steel, diesel, floodlights cutting through fog. Everything echoes. Cranes move like prehistoric animals.
-**Rules:** Union rules on paper, Elena's rules in practice. Nobody moves cargo without her knowing.
-**Power Structure:** Elena controls scheduling. Scheduling controls money.
-**Theme Expression:** Control made physical — every container tracked, every worker monitored.
-**Characters:** Elena (power base), Marco (investigating)
+### Ironhold
+**Location:** The fortress itself — built into the mountainside above the pass, part castle, part mine entrance
+**Atmosphere:** Black stone, torch smoke, the constant sound of hammers from the mines below. Wind howls through arrow slits. Everything echoes upward.
+**Rules:** Serana's word is law. The old lord's banners are gone. The miners' guild sigil hangs in the great hall now — a pickaxe crossed with a chain, broken.
+**Power Structure:** Serana controls the tolls. The tolls control the food. Food controls everything.
+**Theme Expression:** Control made architecture — every corridor watched, every gate locked, every person accounted for.
+**Characters:** Serana (seat of power), Aldric (investigating)
 
-### The Customs Office
-**Location:** Federal customs building, harbor-adjacent. Glass and concrete brutalism.
-**Atmosphere:** Fluorescent lights, coffee machine hum, paper everywhere. The mundane face of state power.
-**Rules:** Procedure. Stamps. Forms. Everything documented, nothing understood.
-**Power Structure:** Marco's jurisdiction on paper. Elena's influence in practice.
-**Theme Expression:** Trust in institutions vs. institutional failure.
-**Characters:** Marco (workplace), Elena (antagonist territory)
+### The Hall of Ledgers
+**Location:** A stone building at the base of the fortress, where the Crown's tax records and trade manifests are kept
+**Atmosphere:** Cold even in summer. Candles guttering in drafts. Shelves of scrolls and bound ledgers reaching to the ceiling. Ink-stained tables. The smell of tallow and old parchment.
+**Rules:** Crown law applies here — in theory. In practice, the ledgers show what Serana wants them to show.
+**Power Structure:** Aldric's jurisdiction on paper. Serana's influence on every page.
+**Theme Expression:** Trust in institutions vs. institutional capture. The law is only as honest as the person holding the pen.
+**Characters:** Aldric (workplace), Serana (shadow presence in every doctored entry)
 
-### The Fisherman's Quarter
-**Location:** Old neighborhood behind the harbor wall. Narrow streets, low buildings, bar called "Zur Möwe."
-**Atmosphere:** Cigarette smoke, cheap beer, sea wind through gaps in buildings. The place where harbor workers become people.
-**Rules:** What happens at Zur Möwe stays at Zur Möwe. Old loyalties from the GDR days still hold.
-**Power Structure:** No single boss. Collective memory. The old dockworkers remember everything.
-**Theme Expression:** Trust as survival — the community's unwritten code.
-**Characters:** Elena (origin), Marco (outsider trying to earn trust)
+### The Black Vein
+**Location:** A tavern carved into the rock beneath the fortress, accessible through a mine tunnel. Named for the obsidian seam that runs through its ceiling.
+**Atmosphere:** Low ceilings, soot-blackened stone, tallow candles, spilled ale on slate floors. Miners drink here after shift. The obsidian vein above the bar glitters in the firelight like a dark river frozen overhead.
+**Rules:** What's said in the Vein stays in the Vein. Old blood oaths from the mining families still hold. The barkeep, Brynn, remembers everyone's father.
+**Power Structure:** No lord, no guild boss. Collective memory. The old miners remember every cave-in, every broken promise, every name.
+**Theme Expression:** Trust as survival — the unwritten code of people who depend on each other underground.
+**Characters:** Serana (origin — her father drank here), Aldric (outsider trying to buy trust with Southern coin)
 
 ## Character-Sub-World Matrix
 | Character | Sub-World | Friction | Ghost Echo | Function |
 |-----------|-----------|----------|------------|----------|
-| Elena | The Terminal | Low — her domain | Father's death on the docks | Empowers |
-| Elena | Customs Office | High — enemy territory | State abandoned her family | Exposes |
-| Elena | Fisherman's Quarter | Medium — she outgrew it | Where she was before power | Diminishes |
-| Marco | The Terminal | High — Elena's rules, not law | His partner's betrayal | Exposes |
-| Marco | Customs Office | Low — his base | — | Protects |
-| Marco | Fisherman's Quarter | Medium — outsider | Reminds him of his own hometown | Humanizes |
+| Serana | Ironhold | Low — her domain | Father's execution in the courtyard | Empowers |
+| Serana | Hall of Ledgers | High — the Crown's foothold | The state that failed her family | Exposes |
+| Serana | The Black Vein | Medium — she outgrew it | Where her father was a person, not a symbol | Diminishes |
+| Aldric | Ironhold | High — Serana's rules, not law | His mentor's corruption behind closed doors | Exposes |
+| Aldric | Hall of Ledgers | Low — his jurisdiction | — | Protects |
+| Aldric | The Black Vein | Medium — outsider | Reminds him of taverns in the capital where Oren held court | Humanizes |
 
 ## Collision Locations
 | Collision Pair | Location | Why Here |
 |---------------|----------|----------|
-| Elena ⚡ Marco | The Terminal, Crane 12 platform | Highest point in the harbor — whoever stands here sees everything. Forces vertical power dynamic. |
-| Elena ⚡ Marco | Zur Möwe (bar) | Neutral ground. Elena is a local. Marco is an outsider. The community watches. |
+| Serana ⚡ Aldric | Ironhold, the courtyard | Where her father was executed. Highest emotional charge. Forces Serana to defend her power on the ground where power destroyed her family. |
+| Serana ⚡ Aldric | The Black Vein | Neutral ground beneath the fortress. Serana is a local. Aldric is a Southerner. The miners watch. |
 
 ## The Conflict World
-**Location:** Container Terminal 7, specifically the control room overlooking the entire port
-**Why Here:** Elena's throne room. Every screen shows a camera feed. Total control — and total isolation.
-**Convergence:** Elena/Marco collision. The control room is where Elena's power is most visible and most fragile — one wrong manifest and it all unravels.
-**Escalation Potential:** The room that sees everything can also be seen INTO. Glass walls. When Marco gets access, Elena's panopticon becomes her fishbowl.
+**Location:** The upper hall of Ironhold — Serana's war room overlooking the pass
+**Why Here:** Every window shows the trade route below. Total visibility — and total exposure. The room where Serana's power is most visible is also where it's most fragile: one honest ledger and it all collapses.
+**Convergence:** Serana/Aldric collision. When Aldric gains access to the upper hall, Serana's fortress becomes her cage.
+**Escalation Potential:** The room that sees the entire pass can also be seen FROM the pass. When the snows close the road, whoever holds the upper hall decides who eats and who doesn't.

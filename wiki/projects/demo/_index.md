@@ -1,4 +1,4 @@
-# Harbor District
+# The Iron Pass
 
 **Medium:** TV Series
 **Status:** Demo project for site development
@@ -7,8 +7,8 @@
 
 | Name | Facet | Enneagram | Status |
 |------|-------|-----------|--------|
-| Elena Voss | Control | 8 | draft |
-| Marco Brandt | Loyalty | 6 | draft |
+| Serana Blackthorn | Control | 8 | draft |
+| Aldric Vane | Trust | 6 | draft |
 
 ## Entity Status
 

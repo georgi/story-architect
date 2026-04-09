@@ -1,149 +1,149 @@
 {
   "project": "demo",
-  "tone_directive": "Handheld 16mm intimacy in Baltic winter — white sky pressing down, dark water below, sodium orange splitting the night. Clinical distance punctuated by single moments of unbearable proximity. Sound recorded on-location: industrial hum underneath everything, even indoors.",
-  "style_seed": "cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
+  "tone_directive": "Northern medieval epic shot on 35mm — iron-gray sky pressing down, black stone rising up, firelight the only warmth. Clinical distance punctuated by single moments of unbearable proximity. Sound recorded on-location: wind and stone underneath everything, the mountain breathing.",
+  "style_seed": "cinematic photography, desaturated palette, shallow depth of field, northern winter light, film grain, 35mm, natural lighting, medieval fantasy, dark atmospheric",
   "assets": [
     {
-      "entity": "characters/elena",
+      "entity": "characters/serana",
       "type": "portrait",
       "model": "fal-ai/nano-banana-2",
-      "prompt": "A woman, 42, short dark hair graying sharply at the temples — not dyed, not managed. Jaw set. Eyes making contact a beat too long before they move away. Dark wool coat, collar turned up. Standing on the metal-grate platform of a harbor crane, one hand on the railing, knuckles loose but the grip is there. Below her: container stacks, fog, sodium floodlights. White sky above. She is not looking at the camera — she is looking at something the camera cannot see. cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
-      "negative_prompt": "smiling, glamorous, soft focus, bright colors, warm light, illustration, stock photo, AI skin, dramatic pose, looking at camera with intention",
-      "output": "media/characters/elena/portrait.webp",
+      "prompt": "A woman, 38, lean and angular, dark hair pulled back tight showing a scar above her left ear. Jaw set. Eyes that measure everything before they commit to looking. Boiled leather armor, iron rings on her fingers — no silk, no color. Standing in a torchlit stone corridor, one hand resting on a rough-hewn wall, the other at her side. Behind her: a narrow window showing a mountain pass in winter, snow falling. She is not looking at the camera — she is looking at something below, in the courtyard. cinematic photography, desaturated palette, shallow depth of field, northern winter light, film grain, 35mm, natural lighting, medieval fantasy",
+      "negative_prompt": "smiling, glamorous, soft focus, bright colors, warm light, illustration, stock photo, AI skin, dramatic pose, modern clothing, clean armor, fantasy cliche",
+      "output": "media/characters/serana/portrait.webp",
       "status": "done"
     },
     {
-      "entity": "characters/elena",
+      "entity": "characters/serana",
       "type": "voice",
       "model": "fal-ai/elevenlabs/tts/multilingual-v2",
-      "dialogue": "The manifest was filed at 06:12. The crane log says 06:40. That's twenty-eight minutes nobody wants to account for. I'm not asking you to explain it. I'm telling you I noticed.",
+      "dialogue": "The pass closes in nine days. After that, nothing moves — not grain, not iron, not people. You can argue with me, or you can argue with the mountain. The mountain doesn't negotiate.",
       "voice_params": {
         "tone": "flat, precise, zero emotional register — the absence of affect is the threat",
         "pacing": "deliberate, short sentences with hard stops, silence before the key phrase",
-        "accent": "Northern German, educated, flattened — the regional edge sanded off but not gone"
+        "accent": "Northern, low register, the roughness of someone who grew up underground"
       },
-      "output": "media/characters/elena/voice.mp3",
-      "status": "pending"
+      "output": "media/characters/serana/voice.mp3",
+      "status": "done"
     },
     {
-      "entity": "characters/elena",
+      "entity": "characters/serana",
       "type": "theme_music",
       "model": "fal-ai/minimax-music/v2",
-      "prompt": "Solo cello, low register, 58 BPM, single repeated four-note motif with a half-step descent on the third note. No vibrato. Dry acoustic — recorded in a concrete room with no reverb treatment. After sixteen bars, a second cello enters a minor third below, playing the same motif slightly behind — never synchronizing. No resolution. The two voices never align. 30 seconds total.",
-      "output": "media/characters/elena/theme.mp3",
-      "status": "pending"
+      "prompt": "Solo cello, low register, 54 BPM, a descending four-note motif like stones falling down a mine shaft. No vibrato. Dry acoustic — recorded in a stone chamber with natural reverb. After sixteen bars, war drums enter at half tempo, deep and resonant, not martial but geological — the sound of the mountain settling. The cello continues over the drums, never changing its phrase. No resolution. 30 seconds total.",
+      "output": "media/characters/serana/theme.mp3",
+      "status": "done"
     },
     {
-      "entity": "characters/elena",
+      "entity": "characters/serana",
       "type": "mood_reel",
-      "model": "fal-ai/minimax-video",
-      "prompt": "A woman in a dark coat climbs the exterior ladder of a harbor crane in the pre-dawn dark. She reaches the operator platform and stops. She puts one hand on the steel railing — not gripping it, just touching it. Below: container terminal, floodlights cutting through fog, cranes motionless. She does not look down. She looks at the horizon where the water goes gray before sunrise. Wind moves her hair slightly. She stands there. 8 seconds, handheld camera from below looking up, desaturated, film grain.",
-      "output": "media/characters/elena/mood-reel.mp4",
-      "status": "pending"
+      "model": "fal-ai/minimax/hailuo-02/standard/text-to-video",
+      "prompt": "A woman in dark leather armor walks through a torchlit stone corridor in a medieval fortress. She reaches a narrow window and stops. She puts one hand on the cold stone sill. Below: a snow-covered courtyard, a gate, mountains beyond. Torchlight flickers on her face. She does not look up. She looks down at the courtyard stones. Wind moves through the window. She stands there. 6 seconds, handheld camera from behind looking over her shoulder, desaturated, film grain, medieval.",
+      "output": "media/characters/serana/mood-reel.mp4",
+      "status": "done"
     },
     {
-      "entity": "characters/marco",
+      "entity": "characters/aldric",
       "type": "portrait",
       "model": "fal-ai/nano-banana-2",
-      "prompt": "A man, 38, tall, runner's frame carrying desk weight in the shoulders. Wearing a pressed dark suit — the jacket fits well, the setting does not. Standing in a fluorescent-lit customs corridor, glass partition offices behind him, paper stacks visible through the glass. He holds a coffee cup in his left hand. His right hand is at his side, thumb touching the wedding ring without rotating it yet. Eyes slightly unfocused — he is calculating, not seeing. Three-day stubble on a face that used to be careful about it. cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
-      "negative_prompt": "smiling, action pose, bright colors, warm light, heroic framing, illustration, stock photo, AI skin, neat appearance",
-      "output": "media/characters/marco/portrait.webp",
+      "prompt": "A man, 34, tall, gaunt, wearing a fur-lined travelling cloak over Southern court dress that looks wrong in this setting. Standing in a cold stone room lit by a single candle on a desk covered in scrolls and ledgers. He holds a quill in his left hand. His right hand is at his side, thumb touching his wedding ring. Eyes slightly unfocused — he is calculating, not seeing. Several days of stubble on a face that used to be careful about grooming. Behind him: stone shelves packed with bound volumes and rolled parchments. cinematic photography, desaturated palette, shallow depth of field, northern winter light, film grain, 35mm, natural lighting, medieval fantasy",
+      "negative_prompt": "smiling, action pose, bright colors, warm light, heroic framing, illustration, stock photo, AI skin, neat appearance, fantasy armor, sword",
+      "output": "media/characters/aldric/portrait.webp",
       "status": "done"
     },
     {
-      "entity": "characters/marco",
+      "entity": "characters/aldric",
       "type": "voice",
       "model": "fal-ai/elevenlabs/tts/multilingual-v2",
-      "dialogue": "I've logged every contact, every shipment authorization, every variance in the inspection schedule going back fourteen months. The pattern is there. It's in the pattern. I just need the access to show it to someone who doesn't already know.",
+      "dialogue": "I have documented every toll collection, every trade manifest, every variance in the iron shipments going back fourteen months. The pattern is there. It is in the ledgers. I simply need access to show it to someone who has not already been paid to look away.",
       "voice_params": {
-        "tone": "measured, slightly too careful — a man choosing each word like it will be read back to him later",
+        "tone": "measured, slightly too careful — a man choosing each word like it will be read back at his trial",
         "pacing": "even tempo with occasional micro-pauses mid-sentence, as if self-correcting in real time",
-        "accent": "Hamburg German, formal register, the politeness that comes from being an outsider trying to prove himself"
+        "accent": "Southern, educated, formal register, the politeness of an outsider who knows he is not welcome"
       },
-      "output": "media/characters/marco/voice.mp3",
-      "status": "pending"
+      "output": "media/characters/aldric/voice.mp3",
+      "status": "done"
     },
     {
-      "entity": "characters/marco",
+      "entity": "characters/aldric",
       "type": "theme_music",
       "model": "fal-ai/minimax-music/v2",
-      "prompt": "Solo piano, upright acoustic, slightly out of tune on the upper register. 66 BPM. A repeating eight-bar phrase that builds toward a resolution in bar seven and then sidesteps it — not a false ending, a wrong turn. The phrase restarts. Second pass: the same phrase but with one additional note added in bar three that shouldn't be there. Third pass: the additional note arrives earlier. The resolution never comes. Sparse, dry, room ambience only, no processing. 30 seconds total.",
-      "output": "media/characters/marco/theme.mp3",
-      "status": "pending"
+      "prompt": "Solo lute, gut strings, slightly flat tuning. 62 BPM. A repeating eight-bar phrase that builds toward resolution in bar seven and sidesteps it — not a false ending, a wrong path taken. The phrase restarts. Second pass: same phrase but with one dissonant note in bar three. Third pass: the dissonant note arrives earlier. Resolution never comes. Sparse, dry, stone room ambience, no processing. 30 seconds total.",
+      "output": "media/characters/aldric/theme.mp3",
+      "status": "done"
     },
     {
-      "entity": "characters/marco",
+      "entity": "characters/aldric",
       "type": "mood_reel",
-      "model": "fal-ai/minimax-video",
-      "prompt": "A man in a suit runs the perimeter road along the harbor fence at 6am. Gray pre-dawn, sodium lights still on, water visible through the chain-link fence. He runs at a steady pace — not racing, not enjoying it. His breath steams. He passes a gate. Slows slightly. Looks through the fence toward the container terminal. Keeps running. Behind him, the lights of the customs building are already on. 7 seconds, static camera from the side, waist level, desaturated, film grain.",
-      "output": "media/characters/marco/mood-reel.mp4",
-      "status": "pending"
-    },
-    {
-      "entity": "locations/the-terminal",
-      "type": "atmosphere",
-      "model": "fal-ai/nano-banana-2",
-      "prompt": "Container terminal at first light, four massive gantry cranes in silhouette against a white Baltic sky, orange sodium floodlights still burning against the coming day, wet concrete apron reflecting the light in broken pools, a single shipping container being lowered into position, the operator cab forty meters up, diesel exhaust rising. Deep focus on the cranes, middle distance blurred slightly. No people visible at ground level. cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
-      "negative_prompt": "sunny, daytime, blue sky, people in foreground, bright colors, clean, modern",
-      "output": "media/locations/the-terminal/atmosphere.webp",
+      "model": "fal-ai/minimax/hailuo-02/standard/text-to-video",
+      "prompt": "A man in a fur-lined cloak walks the fortress walls at dawn. Gray pre-dawn light, snow falling lightly, the mountain pass visible below. He walks at a steady pace — not patrolling, not enjoying the view. His breath steams. He passes a watchtower. Slows. Looks down at the trade road below, empty in the snow. Keeps walking. Behind him, candlelight flickers in a window of the Hall of Ledgers. 6 seconds, static camera from the side, desaturated, film grain, medieval.",
+      "output": "media/characters/aldric/mood-reel.mp4",
       "status": "done"
     },
     {
-      "entity": "locations/the-terminal",
-      "type": "ambient",
-      "model": "fal-ai/elevenlabs/sound-effects/v2",
-      "prompt": "Harbor container terminal ambient soundscape, 60 seconds. Layers: constant low diesel engine rumble at 80Hz as foundation, distant hydraulic hiss of crane mechanisms cycling, metal-on-metal clang every 8-12 seconds as containers are set down — never predictable, always heavy, chain rattling and settling. Underneath: faint wind through steel girder frames. Further back: a foghorn across the water, twice in 60 seconds. No music, no processing, recorded acoustic space with significant low-end room resonance.",
-      "output": "media/locations/the-terminal/ambient.mp3",
-      "status": "pending"
-    },
-    {
-      "entity": "locations/the-customs-office",
+      "entity": "locations/ironhold",
       "type": "atmosphere",
       "model": "fal-ai/nano-banana-2",
-      "prompt": "Interior of a 1970s brutalist federal building, long corridor stretching to a vanishing point, exposed concrete ceiling with fluorescent tube strips running its length, one tube flickering at the far end. On both sides: glass-walled offices with paper files stacked to shoulder height, a coffee machine with a red power light on a counter visible through glass. The corridor is empty. Rain-light through a single window at the end. cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
-      "negative_prompt": "modern, glass tower, warm, cozy, color, people, natural light, open plan",
-      "output": "media/locations/the-customs-office/atmosphere.webp",
+      "prompt": "A massive medieval fortress built into a mountainside at dusk, black stone walls rising from the rock itself, torches burning along the battlements, a narrow gate at the base with iron portcullis half-raised, snow falling steadily, the mountain pass visible below winding between peaks, a single figure silhouetted on the highest tower against an iron-gray sky. Deep focus on the fortress, the trade road a thin line in the valley below. No banners flying. cinematic photography, desaturated palette, shallow depth of field, northern winter light, film grain, 35mm, natural lighting, medieval fantasy, dark atmospheric",
+      "negative_prompt": "sunny, daytime, blue sky, colorful banners, bright colors, summer, clean walls, fantasy cliche, dragons, magic",
+      "output": "media/locations/ironhold/atmosphere.webp",
       "status": "done"
     },
     {
-      "entity": "locations/the-customs-office",
+      "entity": "locations/ironhold",
       "type": "ambient",
       "model": "fal-ai/elevenlabs/sound-effects/v2",
-      "prompt": "Federal office building ambient soundscape, 60 seconds. Layers: fluorescent light hum at a constant 60Hz, coffee machine heating element click and idle beneath it, distant paper shuffling every 10-15 seconds, a phone ringing twice and stopping unanswered at the 25-second mark. Acoustic quality: linoleum floors, concrete walls, drop ceilings — sound deadened but not absorbed, a mid-range flatness. Occasional distant footstep on hard floor. No music, no exterior sound, sealed building atmosphere.",
-      "output": "media/locations/the-customs-office/ambient.mp3",
-      "status": "pending"
-    },
-    {
-      "entity": "locations/the-fishermans-quarter",
-      "type": "atmosphere",
-      "model": "fal-ai/nano-banana-2",
-      "prompt": "Narrow harbor-town street at 10pm, old two-story buildings pressing close, cobblestones wet from sea wind. The bar Zur Möwe: a hanging sign swinging, amber light through frosted glass windows, cigarette smoke drifting under the lamp post outside. Two men in work jackets standing by the door, not talking — watching the street. At the far end of the alley, harbor crane tops visible above the roofline. No tourists. cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
-      "negative_prompt": "daytime, sunny, modern, tourists, clean, bright, wide streets, neon signage",
-      "output": "media/locations/the-fishermans-quarter/atmosphere.webp",
+      "prompt": "Medieval mountain fortress ambient soundscape, 60 seconds. Layers: constant low wind howling through stone corridors as foundation, distant hammer strikes from mines below echoing upward every 6-10 seconds — never predictable, always heavy. Torch flames guttering in drafts. Underneath: the deep geological groan of the mountain itself, barely audible. Further back: a heavy gate chain rattling once. No music, no processing, recorded acoustic space with significant stone reverb.",
+      "output": "media/locations/ironhold/ambient.mp3",
       "status": "done"
     },
     {
-      "entity": "locations/the-fishermans-quarter",
+      "entity": "locations/the-hall-of-ledgers",
+      "type": "atmosphere",
+      "model": "fal-ai/nano-banana-2",
+      "prompt": "Interior of a medieval records hall, long stone room stretching to a far wall, wooden shelves packed floor to ceiling with bound ledgers and scrolled parchments, a heavy oak table in the center with candles guttering in iron holders, ink pots and quills, one candle burned low casting long shadows. The room is empty. A narrow window at the far end shows falling snow. Stone floor, stone walls, stone ceiling — cold even in the image. cinematic photography, desaturated palette, shallow depth of field, candlelight, film grain, 35mm, medieval fantasy, dark atmospheric",
+      "negative_prompt": "modern, bright, warm, cozy, colorful, people, natural sunlight, open space, fantasy cliche, magic",
+      "output": "media/locations/the-hall-of-ledgers/atmosphere.webp",
+      "status": "done"
+    },
+    {
+      "entity": "locations/the-hall-of-ledgers",
       "type": "ambient",
       "model": "fal-ai/elevenlabs/sound-effects/v2",
-      "prompt": "Harbor neighborhood bar exterior and street at night, 60 seconds. Layers: distant sea wind moving through a narrow alley, glass bottles and low conversation audible through a bar wall — not words, just the frequency of speech and the clink of glasses. Occasional burst of laughter from inside, door opening and closing once releasing 3 seconds of louder interior sound then cutting back to muffled. A ship horn far out on the water. Cobblestones: a single pair of heavy boots walking away. Cold air acoustic — sound travels flat and far.",
-      "output": "media/locations/the-fishermans-quarter/ambient.mp3",
-      "status": "pending"
+      "prompt": "Medieval records hall ambient soundscape, 60 seconds. Layers: wind pressing against stone walls as constant low presence, candle flames hissing in drafts, parchment rustling every 10-15 seconds as if turned by a draft, a quill scratching on paper faintly. Acoustic quality: stone walls, vaulted ceiling — sound carries and echoes slightly, cold and hollow. Occasional distant footstep on stone floor. No music, no exterior sound, sealed stone chamber atmosphere.",
+      "output": "media/locations/the-hall-of-ledgers/ambient.mp3",
+      "status": "done"
+    },
+    {
+      "entity": "locations/the-black-vein",
+      "type": "atmosphere",
+      "model": "fal-ai/nano-banana-2",
+      "prompt": "A tavern carved into rock underground, low rough-hewn stone ceiling with a seam of black obsidian glittering in the firelight running across it like a dark frozen river. Tallow candles on slate tables, miners in heavy work clothes drinking from clay cups, soot-blackened walls, a stone bar with barrels behind it. Two men at a corner table not talking — watching the entrance. At the back, a mine tunnel entrance partially blocked by stacked barrels. Firelight and shadow. cinematic photography, desaturated palette, shallow depth of field, firelight, film grain, 35mm, medieval fantasy, dark atmospheric",
+      "negative_prompt": "daytime, bright, clean, modern, tourists, colorful, wide open space, fantasy tavern cliche, elves, magic",
+      "output": "media/locations/the-black-vein/atmosphere.webp",
+      "status": "done"
+    },
+    {
+      "entity": "locations/the-black-vein",
+      "type": "ambient",
+      "model": "fal-ai/elevenlabs/sound-effects/v2",
+      "prompt": "Underground medieval tavern ambient soundscape, 60 seconds. Layers: fire crackling in a stone hearth as foundation, low conversation audible through stone — not words, just the frequency of speech and the clink of clay cups. Occasional burst of rough laughter. A heavy door opening once releasing 3 seconds of wind howl then closing back to muffled warmth. Underneath everything: the deep resonance of being underground, stone pressing in. Dripping water somewhere distant in a mine tunnel. Cold stone acoustic — sound is close and contained.",
+      "output": "media/locations/the-black-vein/ambient.mp3",
+      "status": "done"
     },
     {
       "entity": "project",
       "type": "theme_music",
       "model": "fal-ai/minimax-music/v2",
-      "prompt": "Main theme, 30 seconds. Two instruments only: solo cello and solo upright piano, detuned on upper octave. The cello states a descending four-note phrase — Control. The piano answers with an ascending pattern that doesn't resolve — Trust. Neither phrase completes. They overlap at the midpoint, creating a dissonance that neither instrument acknowledges. The cello phrase repeats, lower. The piano phrase repeats, higher. They diverge without conflict. No drums, no strings section, no production treatment. Recorded in an empty concrete room. 58 BPM, ending on an unresolved suspension.",
+      "prompt": "Main theme, 30 seconds. Two instruments only: solo cello and solo lute, gut strings. The cello states a descending four-note phrase — Control, power, stone falling. The lute answers with an ascending pattern that never resolves — Trust, reaching, always short. Neither phrase completes. They overlap at the midpoint, creating a dissonance neither instrument acknowledges. The cello phrase repeats, lower. The lute phrase repeats, higher. They diverge without conflict. War drums enter in the final 8 seconds, half tempo, distant, geological. No strings section, no choir. Recorded in a stone chamber. 54 BPM, ending on an unresolved suspension.",
       "output": "media/project/main-theme.mp3",
-      "status": "pending"
+      "status": "done"
     },
     {
       "entity": "project",
       "type": "og_image",
       "model": "fal-ai/nano-banana-2",
-      "prompt": "Wide establishing shot of Rostock commercial harbor at dusk from water level, massive container terminal cranes dominating the skyline in silhouette, sodium floodlights activating as daylight fails, the water between camera and docks reflecting orange light in broken streaks, fog beginning to collect around crane bases, a cargo vessel moving slowly left to right in the middle distance. In the foreground: the railing of a dock or smaller vessel, out of focus. No people. The cranes fill the frame like standing figures. cinematic photography, desaturated palette, shallow depth of field, Baltic winter light, film grain, 35mm, natural lighting",
-      "negative_prompt": "daytime, blue sky, tourists, pleasure boats, bright colors, summer, clean water, modern architecture",
+      "prompt": "Wide establishing shot of a mountain fortress at dusk from the valley floor, massive black stone walls built into the mountainside, the trade road winding up through a narrow pass between snow-covered peaks, torches burning along the battlements like a line of fire against the iron-gray sky, fog collecting in the pass below, a single wagon on the road far below — tiny against the mountain. No people visible on the walls. The fortress fills the frame like something that grew from the mountain rather than being built on it. cinematic photography, desaturated palette, shallow depth of field, northern winter light, film grain, 35mm, medieval fantasy, dark atmospheric, epic wide shot",
+      "negative_prompt": "daytime, blue sky, bright colors, summer, dragons, magic, banners, army, modern, fantasy cliche",
       "output": "media/atmosphere/og-image.webp",
       "status": "done"
     }
