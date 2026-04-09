@@ -38,7 +38,10 @@ export async function createMediaResolver(wikiPath: string): Promise<ResolveFunc
     }
   }
 
+  const base = import.meta.env.BASE_URL?.replace(/\/$/, '') ?? '';
+
   return (entity: string, type: string): string | null => {
-    return lookup.get(`${entity}:${type}`) ?? null;
+    const rel = lookup.get(`${entity}:${type}`);
+    return rel ? `${base}/media/${rel}` : null;
   };
 }

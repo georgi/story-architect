@@ -16,7 +16,7 @@ const mainTheme = resolve('atmosphere', 'main_theme');
 <BaseLayout
   title={siteConfig.title}
   description={siteConfig.logline}
-  audioSrc={mainTheme ? `/media/${mainTheme}` : undefined}
+  audioSrc={mainTheme ? `${mainTheme}` : undefined}
 >
   <div class="landing">
     <p class="subtitle">A Story Architect Project</p>
@@ -30,7 +30,7 @@ const mainTheme = resolve('atmosphere', 'main_theme');
           <CharacterCard
             slug={char.slug}
             name={char.name}
-            portraitSrc={portrait ? `/media/${portrait}` : null}
+            portraitSrc={portrait ? `${portrait}` : null}
           />
         );
       })}

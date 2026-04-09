@@ -30,13 +30,13 @@ const inhabitants = allCharacters.filter(char =>
 
 <BaseLayout
   title={`${location.name} — ${siteConfig.title}`}
-  audioSrc={ambientSrc ? `/media/${ambientSrc}` : undefined}
+  audioSrc={ambientSrc ? `${ambientSrc}` : undefined}
 >
   <div class="page">
     <a href={import.meta.env.BASE_URL} class="back-link">&larr; Back</a>
 
     {atmosphereSrc && (
-      <img src={`/media/${atmosphereSrc}`} alt={location.name} class="location-hero" />
+      <img src={`${atmosphereSrc}`} alt={location.name} class="location-hero" />
     )}
 
     <h1>{location.name}</h1>
@@ -45,7 +45,7 @@ const inhabitants = allCharacters.filter(char =>
     {ambientSrc && (
       <div class="page-section">
         <h2>Ambient</h2>
-        <AudioPlayer src={`/media/${ambientSrc}`} label="Location ambience" />
+        <AudioPlayer src={`${ambientSrc}`} label="Location ambience" />
       </div>
     )}
 
@@ -76,7 +76,7 @@ const inhabitants = allCharacters.filter(char =>
         <div class="character-grid" style="justify-content: flex-start;">
           {inhabitants.map(char => {
             const portrait = resolve(`characters/${char.slug}`, 'portrait');
-            return <CharacterCard slug={char.slug} name={char.name} portraitSrc={portrait ? `/media/${portrait}` : null} />;
+            return <CharacterCard slug={char.slug} name={char.name} portraitSrc={portrait ? `${portrait}` : null} />;
           })}
         </div>
       </div>
