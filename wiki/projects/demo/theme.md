@@ -15,4 +15,4 @@ Serana believes power is the only shield against the powerful. Aldric believes l
 
 ## Message (Preliminary)
 
-Power seized to protect becomes indistinguishable from the tyranny it replaced. Law followed without judgment becomes the instrument of injustice. The Iron Pass destroys anyone who tries to hold it with one hand.
+Control and Trust are the same impulse — the need to make a dangerous world survivable — split into two strategies that each require destroying the other to function. The tragedy is not that one corrupts and the other calcifies, but that both are right about what the other will cost, and neither can see that their own remedy is the disease they diagnose in their opponent.

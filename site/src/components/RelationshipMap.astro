@@ -25,7 +25,7 @@ function slugForName(name: string): string | undefined {
       <div class="relationship-item">
         <span class="collision">&#9889;</span>
         {otherSlug ? (
-          <a href={`/characters/${otherSlug}`}>{otherName}</a>
+          <a href={`${import.meta.env.BASE_URL}/characters/${otherSlug}`}>{otherName}</a>
         ) : (
           <span>{otherName}</span>
         )}
@@ -39,7 +39,7 @@ function slugForName(name: string): string | undefined {
     return (
       <div class="relationship-item">
         {otherSlug ? (
-          <a href={`/characters/${otherSlug}`}>{otherName}</a>
+          <a href={`${import.meta.env.BASE_URL}/characters/${otherSlug}`}>{otherName}</a>
         ) : (
           <span>{otherName}</span>
         )}

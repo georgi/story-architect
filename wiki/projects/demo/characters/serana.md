@@ -43,7 +43,7 @@ She dismisses her inner council one by one. Eats alone in the upper hall. The fo
 Serana closes the pass. Not because of the enemy — because of her own people. She would rather starve the fortress than let anyone inside it act without her permission. The mountain becomes a prison, and she is both warden and inmate.
 
 ## Life Lessons
-The mines taught Serana that stone doesn't negotiate. You cut it or it buries you. She decided to become the mountain — and the cost was becoming something that can't bend, can't grieve, can't be moved by anything softer than iron.
+That the miners who come to her with complaints about tunnel supports are not threatening her authority — they are doing exactly what her father did, and she is answering the way Lord Harren answered. That when she exiles a family for speaking in council, their children watch from the courtyard the same way she watched at twelve. That protecting people means letting them refuse her protection — letting Maren disagree in public without three days in the cold, letting the grain merchants set their own prices even when she knows better. That the people inside the fortress are not ore to be extracted and refined into obedience. That releasing control of the pass does not mean her father's death was meaningless — it means his death meant exactly what he intended it to mean.
 
 ## Paradox
 Serana seized power to prevent another Lord Harren. She has become Lord Harren — but she executes with exile instead of axes, and she tells herself that makes her different. It doesn't.

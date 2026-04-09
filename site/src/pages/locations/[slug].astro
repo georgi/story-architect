@@ -33,7 +33,7 @@ const inhabitants = allCharacters.filter(char =>
   audioSrc={ambientSrc ? `/media/${ambientSrc}` : undefined}
 >
   <div class="page">
-    <a href="/" class="back-link">&larr; Back</a>
+    <a href={import.meta.env.BASE_URL} class="back-link">&larr; Back</a>
 
     {atmosphereSrc && (
       <img src={`/media/${atmosphereSrc}`} alt={location.name} class="location-hero" />

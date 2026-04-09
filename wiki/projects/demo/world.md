@@ -32,6 +32,20 @@
 **Theme Expression:** Trust as survival — the unwritten code of people who depend on each other underground.
 **Characters:** Serana (origin — her father drank here), Aldric (outsider trying to buy trust with Southern coin)
 
+### The Waystation Camp
+**Location:** A fortified waystation at the southern foot of the pass, three hours' ride below Ironhold — the last shelter before the ascent begins. A walled yard around a stone inn, expanded over decades by the Southern Crown to manage caravan staging. Currently crowded beyond capacity.
+**Atmosphere:** Wagon wheels sunk in mud that hasn't dried since the first frost. Campfires that smell of wet wool and horse dung. Merchants who have been waiting two weeks sleeping in shifts under their cargo tarps. The inn's common room has become a complaints hall — men shouting over each other in three dialects. A Crown envoy's pennant hangs limp from a post, ignored by everyone including the envoy. The obsidian smoke from the fortress is visible on the ridge, tiny and distant, unreachable.
+**Rules:** Southern Crown law governs here, on paper. In practice, the waystation keeper, a stout widow named Hessa, runs a parallel economy — charging triple for dry hay, selling passage rumors for coin, extending credit at rates that will follow the merchants home. The Crown envoy, Magistrate Callum Drest, is technically Aldric's superior — but Drest has never been north of the foothills and he shows it in every interaction. No one with Serana's seal may be refused entry to the camp, but none have come in weeks.
+**Power Structure:** Drest holds the Crown's authority to negotiate. Hessa holds the food and the warmth. The merchant coalition — a loose body representing four trade houses and two grain guilds — holds the coin and the patience threshold. These three powers spend more energy fighting each other than pressuring Serana. Aldric is expected to report upward to Drest. Aldric does not.
+**Theme Expression:** What happens to trust when an institution (the Crown, the trade compact, the law of the road) fails to deliver. The merchants camped at Hessa's waystation believed in the pass. The pass believed in law. Law believed in Aldric. The chain has broken somewhere up the mountain, and everyone down here is running out of time to find where.
+**Characters:** Aldric (reports here, dreads returning here), Serana (absent but omnipresent — her closed gate is the only wall that matters)
+
+**Concrete Stakes:**
+- *Grain wagons:* Fourteen wagons from the Creston Guild carrying winter wheat contracted for the Northern Reaches' mining towns. The wheat cannot winter in the camp — it will rot in the damp. The guild factor, a young man named Pol, has been keeping a ledger of his projected losses and showing it to anyone who will look.
+- *Iron contracts:* Three Southern foundries contracted for obsidian ore from the Ironhold mines. Their furnaces are cold. Their workers are laid off. Their owners have sent letters to the Crown that have not been answered.
+- *Medicine:* A physician named Vass is traveling north to treat a fever outbreak in the mine settlements. She has been at the waystation eleven days. She does not discuss this in the complaints hall. She drinks alone.
+- *Aldric's wife:* Mira Vane lives in a Crown judicial residence a day south of the waystation. She has sent three letters to the camp addressed to her husband. Hessa has been holding them. Aldric has sent word he is "progressing." He is not.
+
 ## Character-Sub-World Matrix
 | Character | Sub-World | Friction | Ghost Echo | Function |
 |-----------|-----------|----------|------------|----------|
@@ -41,6 +55,8 @@
 | Aldric | Ironhold | High — Serana's rules, not law | His mentor's corruption behind closed doors | Exposes |
 | Aldric | Hall of Ledgers | Low — his jurisdiction | — | Protects |
 | Aldric | The Black Vein | Medium — outsider | Reminds him of taverns in the capital where Oren held court | Humanizes |
+| Aldric | The Waystation Camp | High — he belongs here legally but the people here represent his failure | His wife's unanswered letters; the institutional world he cannot return to clean | Diminishes |
+| Serana | The Waystation Camp | Extreme — she never enters it; it exists entirely as the consequence of her decisions | The helplessness she felt as a child waiting for the Crown to reverse her father's execution | Exposes (in absentia) |
 
 ## Collision Locations
 | Collision Pair | Location | Why Here |

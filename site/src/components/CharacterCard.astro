@@ -7,7 +7,7 @@ interface Props {
 const { slug, name, portraitSrc } = Astro.props;
 ---
 
-<a href={`/characters/${slug}`} class="character-entry">
+<a href={`${import.meta.env.BASE_URL}/characters/${slug}`} class="character-entry">
   {portraitSrc ? (
     <img src={portraitSrc} alt={name} class="portrait-circle" />
   ) : (

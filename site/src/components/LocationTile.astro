@@ -7,7 +7,7 @@ interface Props {
 const { slug, name, atmosphereSrc } = Astro.props;
 ---
 
-<a href={`/locations/${slug}`} class="location-tile">
+<a href={`${import.meta.env.BASE_URL}/locations/${slug}`} class="location-tile">
   {atmosphereSrc ? (
     <img src={atmosphereSrc} alt={name} />
   ) : (
